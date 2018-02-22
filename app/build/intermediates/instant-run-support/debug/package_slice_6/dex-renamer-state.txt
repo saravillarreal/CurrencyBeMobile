@@ -1,0 +1,4 @@
+#Thu Feb 22 01:38:48 CLST 2018
+base.0=/Users/saravillarreal/StudioProjects/CurrencyBeMobile/app/build/intermediates/transforms/dexMerger/debug/6
+path.0=classes.dex
+renamed.0=classes.dex
