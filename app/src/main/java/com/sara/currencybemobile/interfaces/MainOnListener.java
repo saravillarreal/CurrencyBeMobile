@@ -9,5 +9,7 @@ import java.util.List;
  */
 
 public interface MainOnListener {
-    void resultProduct(List<Product> result);
+    void resultProduct(List<String> result);
+    void resultRates ();
+    void resultCalculeRate(Float totalSum);
 }

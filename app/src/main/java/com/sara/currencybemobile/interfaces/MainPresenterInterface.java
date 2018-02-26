@@ -9,6 +9,7 @@ import android.content.Context;
 public interface MainPresenterInterface  {
 
     void getProducts();
-    Context getContext();
+    void getRates();
+    void calculateRates(String product);
 
 }

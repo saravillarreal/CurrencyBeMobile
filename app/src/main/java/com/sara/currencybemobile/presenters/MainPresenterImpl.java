@@ -8,6 +8,7 @@ import com.sara.currencybemobile.interfaces.MainInteractorInterface;
 import com.sara.currencybemobile.interfaces.MainOnListener;
 import com.sara.currencybemobile.interfaces.MainPresenterInterface;
 import com.sara.currencybemobile.interfaces.MainView;
+import com.sara.currencybemobile.views.MainActivity;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class MainPresenterImpl implements MainPresenterInterface, MainOnListener
 
     public MainPresenterImpl(MainView view) {
         this.view = view;
-        this.interactor = new MainInteractorImpl(getContext());
+        this.interactor = new MainInteractorImpl(MainActivity.getContext());
     }
 
     @Override
@@ -35,12 +36,30 @@ public class MainPresenterImpl implements MainPresenterInterface, MainOnListener
     }
 
     @Override
-    public Context getContext() {
-        return view.getContext();
+    public void getRates() {
+        interactor.getRates(this);
     }
 
     @Override
-    public void resultProduct(List<Product> result) {
+    public void calculateRates(String product) {
+        interactor.calculateRate(this, product);
+    }
 
+
+
+    @Override
+    public void resultProduct(List<String> result) {
+
+        view.showProducts(result);
+    }
+
+    @Override
+    public void resultRates() {
+        view.notifyRatesReady();
+    }
+
+    @Override
+    public void resultCalculeRate(Float totalSum) {
+        view.showResult(totalSum);
     }
 }

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sara.currencybemobile.beans.APIResponse;
 import com.sara.currencybemobile.beans.Product;
+import com.sara.currencybemobile.beans.Rate;
 import com.sara.currencybemobile.globals.Urls;
 
 import java.util.List;
@@ -65,6 +66,14 @@ public class ApiService {
      */
     public Call<List<Product>> getProducts(String header) {
         return mApi.getProducts(header);
+    }
+
+    /**
+     * Getting the rates
+     *
+     */
+    public Call<List<Rate>> getRates(String header) {
+        return mApi.getRates(header);
     }
 
 
